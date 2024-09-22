@@ -1,0 +1,80 @@
+////////////////////////////////////////////////////////
+Backend Structure (Node.js with Express and PostgreSQL)
+///////////////////////////////////////////////////////
+
+pizza-ordering-backend/
+│
+├── config/
+│   └── db.js               # PostgreSQL connection setup
+│
+├── controllers/
+│   └── authController.js    # User authentication (login, register)
+│   └── pizzaController.js   # Pizza & toppings management
+│   └── orderController.js   # Order placement and status updates
+│
+├── middleware/
+│   └── authMiddleware.js    # JWT authentication middleware
+│   └── casl.js              # CASL role-based permissions
+│
+├── models/
+│   └── User.js              # User model/schema
+│   └── Pizza.js             # Pizza model/schema
+│   └── Order.js             # Order model/schema
+│   └── Topping.js           # Toppings model/schema
+│
+├── routes/
+│   └── authRoutes.js        # Routes for user authentication
+│   └── pizzaRoutes.js       # Routes for pizza & toppings management
+│   └── orderRoutes.js       # Routes for order management
+│
+├── utils/
+│   └── jwt.js               # Helper functions for JWT handling
+│
+├── .env                     # Environment variables (DB config, JWT secret)
+├── package.json
+├── server.js                # Entry point of the Node.js app
+└── README.md
+
+
+//////////////////////////////////////////////
+Frontend Structure (React.js with Material UI)
+//////////////////////////////////////////////
+
+pizza-ordering-frontend/
+│
+├── public/
+│   └── index.html           # Main HTML file
+│
+├── src/
+│   ├── components/
+│   │   └── Auth/
+│   │       └── Login.js      # User login component
+│   │       └── Register.js   # User registration component
+│   │   └── Pizza/
+│   │       └── PizzaList.js  # Pizza menu for customers
+│   │       └── PizzaForm.js  # Pizza management form (for managers)
+│   │   └── Orders/
+│   │       └── OrderForm.js  # Order form for customers
+│   │       └── OrderList.js  # Order management for managers
+│   │
+│   ├── context/
+│   │   └── AuthContext.js    # Context for handling authentication state
+│   │   └── RoleContext.js    # Context for managing roles/permissions
+│   │
+│   ├── pages/
+│   │   └── LoginPage.js      # Login page
+│   │   └── RegisterPage.js   # Register page
+│   │   └── DashboardPage.js  # Manager’s dashboard
+│   │   └── PizzaMenuPage.js  # Customer's pizza menu
+│   │   └── OrderPage.js      # Order page
+│   │
+│   ├── services/
+│   │   └── api.js            # Centralized API calls to the backend
+│   │
+│   ├── App.js                # Main App component
+│   ├── index.js              # Entry point for React app
+│   └── routes.js             # Handles routing between pages
+│
+├── .env                      # Environment variables for API URL
+├── package.json
+└── README.md
